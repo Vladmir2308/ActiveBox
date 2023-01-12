@@ -1,0 +1,68 @@
+@font-face{
+    font-family: "C_I";
+    src: url("fonts/Cardo-Italic.woff") format('woff');
+}
+
+@font-face{
+    font-family: "OS_B";
+    src: url("fonts/OpenSans-Bold.woff") format('woff');
+}
+
+@font-face{
+    font-family: "OS_R";
+    src: url("fonts/OpenSans-Regular.woff") format('woff');
+}
+
+@font-face{
+    font-family: "R_L";
+    src: url("fonts/Raleway-Light.woff") format('woff');
+}
+
+@font-face{
+    font-family: "R_B";
+    src: url("fonts/Raleway-Bold.woff") format('woff');
+}
+
+@font-face{
+    font-family: "R_R";
+    src: url("fonts/Raleway-Regular.woff") format('woff');
+}
+
+@font-face{
+    font-family: "R_SB";
+    src: url("fonts/Raleway-SemiBold.woff") format('woff');
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    
+    font-family: "R_R";
+    font-size: 10px;
+    line-height: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
