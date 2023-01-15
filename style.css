@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6, p{
 
 body{
     margin: 0;
-    
+
     font-family: "R_R";
     font-size: 10px;
     line-height: 10px;
@@ -54,32 +54,40 @@ body{
 /* Header */
 .header{
     width: 100%;
-    
+
     position: absolute;
+}
+
+.header.fixed{
+    position: fixed;
+
+    background-color: #000;
+
+    z-index: 1;
 }
 
 .header__inner{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     width: 100%;
     max-width: 1170px;
-    
+
     margin: 0 auto;
     padding: 35px 15px;
-    
+
     position: relative;
 }
 
 .header__inner::after{
     content: "";
-    
+
     width: 100%;
     height: 1px;
-    
+
     background-color: #505369;
-    
+
     position: absolute;
     bottom: 0;
     left: 0;
@@ -90,15 +98,45 @@ body{
     display: block;
 }
 
+.nav.nav--toggle{
+    position: absolute;
+    right: -2px;
+    top: 96px;
+
+    padding: 30px 15px 0;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    background-color: rgba(0, 0, 0, .8);
+
+    height: 350px;
+
+    border-radius: 0 0 0 20px;
+}
+
+.nav.nav--toggle.fixed{
+    position: fixed;
+}
+
+.nav--toggle .nav__link{
+    margin-bottom: 60px;
+    margin-right: 0;
+
+    font-size: 18px;
+    color: #fff;;
+}
+
 .nav__link{
     font-size: 13px;
     font-family: "R_B";
     text-decoration: none;
     color: rgba(255, 255, 255, .75);
     text-transform: uppercase;
-    
+
     margin-right: 60px;
-    
+
     transition: color .4s linear;
 }
 
@@ -114,60 +152,82 @@ body{
 .toggle{
     display: none;
     position: relative;
-    
+
     width: 40px;
     height: 3px;
     background-color: #fff;
+}
+
+.toggle.active{
+    background-color: inherit;
+
+    transition: background .2s linear;
+}
+
+.toggle.active::after{
+    transform-origin: left top;
+    transform: rotate(-30deg) translate(0px);
+
+
+}
+
+.toggle.active::before{
+    transform-origin: left top;
+    transform: rotate(30deg) translate(1px);
 }
 
 .toggle::before{
     content: "";
-    
+
     position: absolute;
     top: -10px;
     left: 0;
-    
+
     width: 40px;
     height: 3px;
     background-color: #fff;
+
+    transition: transform .2s linear;
 }
 
 .toggle::after{
     content: "";
-    
+
     position: absolute;
     bottom: -10px;
     left: 0;
-    
+
     width: 40px;
     height: 3px;
     background-color: #fff;
+
+    transition: transform .2s linear;
 }
 
 /* Intro */
 .intro{
     background: url(img/intro/bg.jpg) center no-repeat;
     background-size: cover;
-    
+
     padding-bottom: 100px;
 }
 
 .container{
     max-width: 1190px;
-    
+
     margin: 0 auto;
     padding: 0 15px;
 }
 
 .content{
     padding-top: 200px;
-    
+
     text-align: center;
-    
+
     max-width: 920px;
-    
+
     margin: 0 auto;
-    
+
     color: #fff;
 }
 
@@ -176,9 +236,9 @@ body{
     font-size: 6.5em;
     line-height: 1;
     text-transform: uppercase;
-    
+
     max-width: 865px;
-    
+
     margin: 0 auto;
 }
 
@@ -186,14 +246,14 @@ body{
     font-family: "R_R";
     font-size: 2.2em;
     line-height: 1.5;
-    
+
     margin: 35px 0 70px;
 }
 
 /* Features */
 .features{
     height: auto;
-    
+
     padding: 45px 0 115px;
 }
 
@@ -205,9 +265,9 @@ body{
 
 .features__item{
     width: 33.33333%;
-    
+
     text-align: center;
-    
+
     padding: 0 45px;
     margin-top: 70px;
 }
@@ -217,7 +277,7 @@ body{
     font-size: 1.4em;
     line-height: 1.4;
     text-transform: uppercase;
-    
+
     margin: 30px 0 20px;
 }
 
@@ -234,9 +294,9 @@ body{
 
 .galery__item{
     width: 25%;
-    
+
     position: relative;
-    
+
     background-color: #e84545;
 }
 
@@ -252,7 +312,7 @@ body{
     display: block;
     width: 100%;
     height: 100%;
-    
+
     transition: opacity .4s linear;
 }
 
@@ -260,14 +320,14 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    
+
     transform: translate3d(-50%, -50%, 0);
-    
+
     text-align: center;
     color: #fff;
-    
+
     opacity: 0;
-    
+
     transition: opacity .4s linear;
 }
 
@@ -275,7 +335,7 @@ body{
     font-family: "R_B";
     font-size: 1.4em;
     text-transform: uppercase;
-    
+
     margin-bottom: 15px;
 }
 
@@ -295,9 +355,9 @@ body{
 }
 
 .team__item{
-    
+
     font-weight: 700;
-    
+
     width: 23%;
 }
 
@@ -309,7 +369,7 @@ body{
 .team__name{
     font-size: 2.2em;
 
-    
+
     margin: 30px 0 20px;
 }
 
@@ -323,7 +383,7 @@ body{
     font-size: 1.4em;
     line-height: 1.5;
     color: #6c7279;
-    
+
     margin: 25px 0 50px;
 }
 
@@ -346,13 +406,13 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
     width: 50%;
-    
+
     background-color: #53354a;
-    
+
     color: #fff;
-    
+
     text-align: center;
 }
 
@@ -360,15 +420,15 @@ body{
     font-family: "C_I";
     font-size: 3.6em;
     line-height: 1.2;
-    
+
     max-width: 450px;
-    
+
     margin: 0 auto;
 }
 
 .reviews__avtor{
     margin-top: 35px;
-    
+
     font-family: "R_B";
     font-size: 1.3em;
     line-height: 1.5;
@@ -379,8 +439,8 @@ body{
 .download{
     text-align: center;
     color: #2d3033;
-    
-    padding: 90px 0;  
+
+    padding: 90px 0;
 }
 
 .download__title{
@@ -393,7 +453,7 @@ body{
     font-family: "R_B";
     font-size: 1.3em;
     text-transform: uppercase;
-    
+
     margin: 25px 0 55px;
 }
 
@@ -404,20 +464,20 @@ body{
 
 .footer__inner{
     max-width: 1050px;
-    
+
     margin: 0 auto;
     padding: 65px 15px 105px;
-    
+
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    
+
     color: #fff;
 }
 
 .footer__col{
     width: 33.33333%;
-    
+
     text-align: center;
 }
 
@@ -426,14 +486,14 @@ body{
     font-size: 1.4em;
 
     text-transform: uppercase;
-    
+
     margin-bottom: 20px;
 }
 
 .footer__text{
     font-size: 1.4em;
     line-height: 1.5;
-    
+
     opacity: .5;
 }
 
@@ -442,11 +502,11 @@ body{
     color: #808080;
     font-size: 1.4em;
     line-height: 1.5;
-    
+
     padding: 25px 0;
-    
+
     width: 100%;
-    
+
     background-color: #313454;
 }
 
@@ -464,13 +524,13 @@ span{
 .social__icon{
     width: 40px;
     height: 40px;
-    
+
     border: 1px solid #e8ecee;
-    
+
     margin-right: 5px;
-    
+
     position: relative;
-    
+
     transition: background .4s linear;
 }
 
@@ -481,15 +541,15 @@ span{
 .icon{
     width: 18px;
     height: 18px;
-    
+
     position: absolute;
     top: 50%;
     left: 50%;
-    
+
     transform: translate3d(-50%, -50%, 0);
-    
+
     fill: #c6cacc;
-    
+
     transition: fill .4s linear;
 }
 
@@ -517,18 +577,18 @@ span{
 /* Btn */
 .btn{
     background-color: #e84545;
-    
+
     text-transform: uppercase;
     text-decoration: none;
     color: #fff;
-    
+
     font-family: "R_SB";
     font-size: 1.3em;
-    
+
     padding: 15px 45px;
-    
+
     transition: background .4s linear;
-    
+
     border-radius: 5px;
 }
 
@@ -553,19 +613,19 @@ span{
     .nav{
         display: none;
     }
-    
+
     .toggle{
         display: block;
     }
-    
+
     /* Reviews */
     .reviews__photo{
         width: 100%;
     }
-    
+
     .reviews__content{
         width: 100%;
-        
+
         padding: 20px 0;
     }
 }
@@ -575,10 +635,10 @@ span{
     .team__item{
         width: 50%;
         padding: 20px;
-        
+
         text-align: center;
     }
-    
+
     .social{
         justify-content: center;
     }
@@ -589,8 +649,8 @@ span{
     .content{
         font-size: 8px;
     }
-    
-    
+
+
     .features__item{
         width: 50%;
     }
@@ -601,62 +661,62 @@ span{
     .content{
         padding-top: 180px;
     }
-    
+
     .title{
         font-size: 5em;
     }
-    
+
     /* Features*/
     .features{
         padding: 30px 0 80px;
     }
-    
+
     .features__item{
         width: 100%;
     }
-    
+
     /* Galery*/
     .galery__item{
         width: 100%;
     }
-    
+
     /* Team */
     .team{
         padding: 60px 0;
     }
-    
+
     .team__item{
         width: 100%;
-        
+
         padding: 0;
         margin-top: 25px;
     }
-    
+
     .team__item:first{
         margin-top: 0;
     }
-    
+
     /* Reviews */
     .reviews__content{
         font-size: 7px;
     }
-    
+
     /* Download*/
     .download{
         font-size: 8px;
     }
-    
+
     /* Footer */
     .footer__inner{
         padding: 50px 15px;
     }
-    
+
     .footer__col{
         width: 100%;
-        
+
         margin-bottom: 50px;
     }
-    
+
     .footer__col:last-child{
         margin-bottom: 0;
     }
